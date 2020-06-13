@@ -1,15 +1,54 @@
 <html>
 
 <head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 </head>
 <body>
+{% for user in users %}
 
-        {% for user in users %}
-            {{user.first_name}}
-            {{user.last_name}}
-            {{user.title}}
-            {{user.password}}
-        {% endfor %}
+  
+                                                                <!-- COMPETITION CARD 1 -->
+<!-- <div class="container">
+<div class="row">
+<div class="col-lg-4 col-md-6 col-sm-12 cardSpace">
+<a href="comp3.html" class="text-decoration-none">
+<div class="card">
+<img class="card-img-top" src="" alt="user2">
+<div class="card-body">
+<h5 class="card-title mb-1">{{user.first_name}}</h5>
+<br>
+<p>{{user.first_name}}</p>
+<p>{{user.last_name}}</p>
+<p>{{user.title}}</p>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div> -->
+
+<div class="container">
+<div class="row d-flex justify-content-center">
+<div class=" tile col-md-3 worksContainer">
+<img class="card-img-top" src="{{url_for('static', filename='images/generic-avatar.png')}}" alt="user2">
+<h4 class="tile-h4">{{user.first_name}}</h4>
+<p class="tile-p">{{user.first_name}}</p>
+<p class="tile-p">{{user.last_name}}</p>
+<p class="tile-p">{{user.title}}</p>
+</div>
+</div>
+</div>
+{% endfor %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+</script>
 </body>
 </html>

@@ -7,7 +7,7 @@ app = Flask(__name__)
 # app.config["MONGO_DBNAME"] = 'milestone-3'
 # app.config["MONGO_URI"] = 'mongodb+srv://root:rootUser@myfirstcluster-a08kd.mongodb.net/milestone-3?retryWrites=true&w=majority'
 app.config["MONGO_DBNAME"] = 'milestone-3'
-app.config["MONGO_URI"] = os.getenv('MONGO_URI', "Env Not loaded")
+app.config["MONGO_URI"] = os.getenv('MONGO_URI')
 
 mongo = PyMongo(app)
 
