@@ -9,41 +9,31 @@
 
 </head>
 <body>
-{% for user in users %}
 
-  
-                                                                <!-- COMPETITION CARD 1 -->
-<!-- <div class="container">
-<div class="row">
-<div class="col-lg-4 col-md-6 col-sm-12 cardSpace">
-<a href="comp3.html" class="text-decoration-none">
-<div class="card">
-<img class="card-img-top" src="" alt="user2">
-<div class="card-body">
-<h5 class="card-title mb-1">{{user.first_name}}</h5>
-<br>
-<p>{{user.first_name}}</p>
-<p>{{user.last_name}}</p>
-<p>{{user.title}}</p>
-</div>
-</div>
-</a>
-</div>
-</div>
-</div> -->
 
 <div class="container">
 <div class="row d-flex justify-content-center">
+{% for user in users %}
 <div class=" tile col-md-3 worksContainer">
-<img class="card-img-top" src="{{url_for('static', filename='images/generic-avatar.png')}}" alt="user2">
-<h4 class="tile-h4">{{user.first_name}}</h4>
-<p class="tile-p">{{user.first_name}}</p>
-<p class="tile-p">{{user.last_name}}</p>
+<img class="card-img-top" src="{{url_for('static', filename='images/generic-avatar.png')}}" alt="user">
+<h4 class="tile-h4">{{user.first_name}}  {{user.last_name}}</h4>
 <p class="tile-p">{{user.title}}</p>
-</div>
-</div>
+<p class="tile-p">{{user.company}}</p>
+<form method="post">
+<!-- <div class="form-group">
+      <label for="password">Password</label>
+      <input class="form-control" type="text">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary " name="submit" type="submit">Login</button>
+      </div>
+     </form> -->
+<a class="btn btn-primary" href="{{url_for('new_permit')}}" role="button">New Permit</a>
+<a class="btn btn-warning" href="{{url_for('permits')}}" role="button">Permits</a>
 </div>
 {% endfor %}
+</div>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>

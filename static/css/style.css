@@ -37,9 +37,34 @@
     margin-top: 10px;
     text-align: center;
     color: orange;
-    font-weight: bold;  
+    font-weight: bold;
+    text-transform: capitalize;
 }
 
 .tile-p {
-    text-align: center;   
+    text-align: center;
+    text-transform: capitalize; 
+}
+
+.permit-bar {
+    text-align: center;
+    background-color: rgb(54, 53, 53);
+    color: white;
+    border-radius: 2px;
+}
+
+#excavation {
+    background-color: red;
+}
+
+.permit-box {
+    text-align: center;
+    background-color: rgba(240, 240, 240, 0.904);
+    border-radius: 2px;
+}
+
+.permit-container {
+    border: 1px solid rgb(240, 230, 230);
+    background-color: rgba(240, 240, 240, 0.904);
+    border-radius: 2px;
 }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+</head>
+<body>
+
+
+    <div class="container">
+    {% for permit in permits %}
+    <div class="row">
+    <div class="col-12">
+    <strong>{{permit.date}}</strong>  -  
+    {{permit.contractor}}  -  
+    {{permit.sub_contractor}}  -  
+    {{permit.location}}  -  
+    {{permit.crew_size}}
+    <a class="btn btn-primary" href="{{url_for('view_permit')}}" role="button">View Permit</a>
+                </div>
+            </div>
+            {% endfor %}
+            </div>
+            
+</body>
+</html>
