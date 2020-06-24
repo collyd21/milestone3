@@ -53,18 +53,53 @@
     border-radius: 2px;
 }
 
-#excavation {
-    background-color: red;
+.permit-box {
+    background-color: #fff;
+    border-radius: .25rem;
+    border: 1px solid #ced4da;
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-clip: padding-box;
+    margin-bottom: 16px;
 }
 
-.permit-box {
-    text-align: center;
-    background-color: rgba(240, 240, 240, 0.904);
-    border-radius: 2px;
+.box-rows {
+height: 90px;
+}
+.titles p {
+    margin-bottom: 8px;
 }
 
 .permit-container {
     border: 1px solid rgb(240, 230, 230);
     background-color: rgba(240, 240, 240, 0.904);
     border-radius: 2px;
+    box-shadow: 0px 0px 5px grey;
+}
+
+.table-rows {
+background-color: rgba(240, 240, 240, 0.904);
+}
+
+.table-body {
+border-radius: 2px;
+box-shadow: 0px 0px 5px grey;
+}
+
+.each-row {
+    text-transform: capitalize;
+}
+
+.each-row:hover {
+background-color: rgba(233, 232, 232, 0.904);
+}
+
+.slider.onColor{
+    color: red;
 }

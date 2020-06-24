@@ -1,32 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-</head>
-<body>
-
+{% extends 'base.html' %} {% block content %}
 
     <div class="container">
-    {% for permit in permits %}
-    <div class="row">
-    <div class="col-12">
-    <strong>{{permit.date}}</strong>  -  
-    {{permit.contractor}}  -  
-    {{permit.sub_contractor}}  -  
-    {{permit.location}}  -  
-    {{permit.crew_size}}
-    <a class="btn btn-primary" href="{{url_for('view_permit')}}" role="button">View Permit</a>
-                </div>
-            </div>
-            {% endfor %}
+<table class="table table-body">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Contractor</th>
+      <th scope="col">Sub-Contractor</th>
+      <th scope="col">Location</th>
+      <th scope="col">Crew Size</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  {% for permit in permits %}
+  <tbody class="table-rows">
+    <tr class="each-row">
+      <td>{{permit.date}}</td>
+      <td>{{permit.contractor}}</td>
+      <td>{{permit.sub_contractor}}</td>
+      <td>{{permit.location}}</td>
+      <td>{{permit.crew_size}}</td>
+      <td><a class="btn btn-primary" href="{{url_for('view_permit', permits_id=permit._id)}}" role="button">View Permit</a></td>
+      <td><a class="btn btn-warning" href="{{url_for('edit_permit', permits_id=permit._id)}}" role="button">Edit Permit</a></td>
+    </tr>
+  </tbody>
+  {% endfor %}
+</table>
             </div>
             
-</body>
-</html>
+{% endblock %}
